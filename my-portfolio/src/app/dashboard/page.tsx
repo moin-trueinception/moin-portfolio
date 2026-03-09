@@ -4,38 +4,38 @@ export default function Dashboard() {
   return (
     <main
       id="home"
-      className="ml-[220px] min-h-screen bg-[#0a0c10] text-[#e8edf5]"
+      className="min-h-screen bg-[#0a0c10] text-[#e8edf5] pt-14 md:pt-0 md:ml-[220px]"
     >
-      {/* Hero banner */}
-      <section className="relative h-[260px] overflow-hidden border-b border-[#1e2630] bg-[#050816]">
-        <Image
-          src="/cover-photo.png"
-          alt="Moinuddin Shaikh cover banner"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
-      </section>
+{/* Hero banner */}
+<section className="relative w-full overflow-hidden border-b border-[#1e2630] bg-[#050816] aspect-[4.5/1] sm:aspect-[4/1] md:aspect-[4.5/1] lg:aspect-[5/1]">
+  <Image
+    src="/cover-photo.png"
+    alt="Moinuddin Shaikh cover banner"
+    fill
+    priority
+    sizes="100vw"
+    className="object-cover object-[50%_30%]"
+  />
+</section>
 
       {/* Profile strip */}
-      <section className="relative flex min-h-[110px] items-center gap-6 border-b border-[#1e2630] bg-[#0f1318] px-12 py-5">
-        <div className="mt-[-60px] flex h-24 w-24 flex-shrink-0 items-center justify-center rounded-full border-[5px] border-[#050816] bg-gradient-to-br from-[#00d4aa] to-[#0077ff] font-sans text-2xl font-extrabold text-[#0a0c10]">
+      <section className="relative flex flex-col gap-4 border-b border-[#1e2630] bg-[#0f1318] px-4 pb-5 pt-4 sm:min-h-[110px] sm:flex-row sm:items-center sm:px-6 lg:px-12">
+        <div className="mt-[-52px] flex h-24 w-24 flex-shrink-0 items-center justify-center rounded-full border-[5px] border-[#050816] bg-gradient-to-br from-[#00d4aa] to-[#0077ff] font-sans text-2xl font-extrabold text-[#0a0c10] sm:mt-[-60px] md:h-28 md:w-28">
           MS
         </div>
-        <div className="flex flex-1 flex-col gap-1">
-          <h1 className="font-display text-[24px] font-extrabold tracking-[-0.04em]">
+        <div className="mt-2 flex flex-1 flex-col gap-1 sm:mt-0">
+          <h1 className="font-display text-[20px] font-extrabold tracking-[-0.04em] sm:text-[22px] lg:text-[24px]">
             Moinuddin Shaikh
           </h1>
-          <p className="inline-flex items-center text-[11px] font-medium uppercase tracking-[0.22em] text-[#00d4aa]">
+          <p className="inline-flex flex-wrap items-center gap-1 text-[10px] font-medium uppercase tracking-[0.18em] text-[#00d4aa] sm:text-[11px] sm:tracking-[0.22em]">
             Backend Developer · Node.js · TypeScript · REST APIs
             <span className="ml-1 inline-block h-[14px] w-2 animate-pulse bg-[#00d4aa]" />
           </p>
         </div>
-        <div className="flex gap-2">
+        <div className="mt-3 flex flex-wrap gap-2 sm:mt-0 sm:flex-nowrap sm:justify-end">
           <a
             href="mailto:moinsaokh92@gmail.com"
-            className="inline-flex items-center gap-2 rounded border border-[#1e2630] bg-transparent px-4 py-2 text-[11px] font-medium tracking-[0.18em] text-[#8892a4] transition hover:border-[#00d4aa] hover:text-[#00d4aa]"
+            className="inline-flex w-full items-center justify-center gap-2 rounded border border-[#1e2630] bg-transparent px-4 py-2 text-[11px] font-medium tracking-[0.18em] text-[#8892a4] transition hover:border-[#00d4aa] hover:text-[#00d4aa] sm:w-auto"
           >
             <svg
               width="12"
@@ -52,7 +52,7 @@ export default function Dashboard() {
           </a>
           <a
             href="#"
-            className="no-link-color inline-flex items-center gap-2 rounded border border-[#00d4aa] bg-[#00d4aa] px-4 py-2 text-[11px] font-medium tracking-[0.18em] text-[#0a0c10] transition hover:bg-transparent hover:text-[#00d4aa]"
+            className="no-link-color inline-flex w-full items-center justify-center gap-2 rounded border border-[#00d4aa] bg-[#00d4aa] px-4 py-2 text-[11px] font-medium tracking-[0.18em] text-[#0a0c10] transition hover:bg-transparent hover:text-[#00d4aa] sm:w-auto"
           >
             <svg
               width="12"
@@ -72,7 +72,7 @@ export default function Dashboard() {
       </section>
 
       {/* Content grid */}
-      <section className="grid gap-8 px-12 py-9 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
+      <section className="grid gap-8 px-4 py-8 sm:px-6 lg:px-12 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
         {/* Left column */}
         <div className="space-y-8">
           {/* About */}
