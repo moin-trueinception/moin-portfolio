@@ -1,10 +1,13 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export const Sidebar: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>("home");
   const [isMobileOpen, setIsMobileOpen] = useState<boolean>(false);
+  const pathname = usePathname();
   const baseLinkClasses =
     "relative flex items-center gap-3 px-7 py-3 text-[12px] font-medium tracking-[0.16em] transition hover:bg-emerald-400/5";
 
@@ -26,12 +29,12 @@ export const Sidebar: React.FC = () => {
     sections.forEach((section) => observer.observe(section));
 
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]);
 
   const renderNav = (onNavigate?: () => void) => (
     <>
-      <a
-        href="#home"
+      <Link
+        href="/dashboard#home"
         onClick={() => {
           setActiveSection("home");
           onNavigate?.();
@@ -55,9 +58,9 @@ export const Sidebar: React.FC = () => {
           <path d="M3 12L12 3l9 9M5 10v9a1 1 0 001 1h4v-5h4v5h4a1 1 0 001-1v-9" />
         </svg>
         Home
-      </a>
-      <a
-        href="#experience"
+      </Link>
+      <Link
+        href="/experience-section#experience"
         onClick={() => {
           setActiveSection("experience");
           onNavigate?.();
@@ -82,9 +85,9 @@ export const Sidebar: React.FC = () => {
           <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" />
         </svg>
         Experience
-      </a>
-      <a
-        href="#projects"
+      </Link>
+      <Link
+        href="/project-section"
         onClick={() => {
           setActiveSection("projects");
           onNavigate?.();
@@ -108,9 +111,36 @@ export const Sidebar: React.FC = () => {
           <path d="M3 3h6l2 3H21a2 2 0 012 2v10a2 2 0 01-2 2H3a2 2 0 01-2-2V5a2 2 0 012-2z" />
         </svg>
         Projects
-      </a>
-      <a
-        href="#skills"
+      </Link>
+      <Link
+        href="/blog-section#blog"
+        onClick={() => {
+          setActiveSection("blog");
+          onNavigate?.();
+        }}
+        className={`${baseLinkClasses} ${
+          activeSection === "blog"
+            ? "before:absolute before:left-0 before:top-0 before:h-full before:w-[3px] before:rounded-r before:bg-[#00d4aa]"
+            : "hover:text-[#00d4aa]"
+        }`}
+        style={{
+          color: activeSection === "blog" ? "#00d4aa" : "#8892a4",
+        }}
+      >
+        <svg
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          className="h-[15px] w-[15px] flex-shrink-0"
+        >
+          <path d="M4 4h16v14H4z" />
+          <path d="M8 8h8M8 12h5" />
+        </svg>
+        Blogs
+      </Link>
+      <Link
+        href="/skills#skills"
         onClick={() => {
           setActiveSection("skills");
           onNavigate?.();
@@ -134,9 +164,9 @@ export const Sidebar: React.FC = () => {
           <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
         </svg>
         Skills
-      </a>
-      <a
-        href="#contact"
+      </Link>
+      <Link
+        href="/contact-section#contact"
         onClick={() => {
           setActiveSection("contact");
           onNavigate?.();
@@ -160,7 +190,7 @@ export const Sidebar: React.FC = () => {
           <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.56-.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z" />
         </svg>
         Contact
-      </a>
+      </Link>
       <a
         href="https://github.com"
         target="_blank"

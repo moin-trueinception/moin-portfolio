@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Dashboard() {
   return (
@@ -186,13 +187,24 @@ export default function Dashboard() {
 
           {/* Projects */}
           <section id="projects" className="space-y-4">
-            <div className="flex items-center gap-3 text-[13px] font-bold uppercase tracking-[0.28em]">
-              <span>Projects</span>
-              <span className="h-px flex-1 bg-[#1e2630]" />
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex flex-1 items-center gap-3 text-[13px] font-bold uppercase tracking-[0.28em]">
+                <span>Projects</span>
+                <span className="h-px flex-1 bg-[#1e2630]" />
+              </div>
+              <Link
+                href="/project-section"
+                className="text-[10px] font-medium uppercase tracking-[0.2em] text-[#8892a4] underline-offset-4 hover:text-[#00d4aa] hover:underline"
+              >
+                View all
+              </Link>
             </div>
 
             <div className="grid gap-3 sm:grid-cols-2">
-              <article className="relative cursor-pointer overflow-hidden rounded-md border border-[#1e2630] bg-[#0f1318] p-5 transition hover:border-emerald-400/40">
+              <Link
+                href="/project-section"
+                className="relative block cursor-pointer overflow-hidden rounded-md border border-[#1e2630] bg-[#0f1318] p-5 transition hover:border-emerald-400/40"
+              >
                 <div className="pointer-events-none absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-[#00d4aa] to-[#0077ff] opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
                 <h3 className="font-display text-[13px] font-bold text-[#e8edf5]">
                   🔐 Auth &amp; User Management API
@@ -219,9 +231,12 @@ export default function Dashboard() {
                     JWT
                   </span>
                 </div>
-              </article>
+              </Link>
 
-              <article className="relative cursor-pointer overflow-hidden rounded-md border border-[#1e2630] bg-[#0f1318] p-5 transition hover:border-emerald-400/40">
+              <Link
+                href="/project-section"
+                className="relative block cursor-pointer overflow-hidden rounded-md border border-[#1e2630] bg-[#0f1318] p-5 transition hover:border-emerald-400/40"
+              >
                 <h3 className="font-display text-[13px] font-bold text-[#e8edf5]">
                   🏨 Hotel Management API
                 </h3>
@@ -244,7 +259,7 @@ export default function Dashboard() {
                     PostgreSQL
                   </span>
                 </div>
-              </article>
+              </Link>
             </div>
           </section>
         </div>
