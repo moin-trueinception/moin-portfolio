@@ -60,10 +60,10 @@ h3,
     BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-a {
+a:not(.no-link-color) {
   color: var(--accent-secondary);
 }
 
-a:hover {
+a:not(.no-link-color):hover {
   color: var(--accent-primary);
 }

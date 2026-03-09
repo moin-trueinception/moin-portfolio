@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, Syne } from "next/font/google";
 import "./globals.css";
+import { Sidebar } from "../components/sidebar";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
@@ -26,6 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${jetbrainsMono.variable} ${syne.variable} antialiased`}>
+        <Sidebar />
         {children}
       </body>
     </html>

@@ -1,7 +1,5 @@
-export default function home(){
-  return (
-    <div>
-      <h1>my-portfolio</h1>
-    </div>
-  )
+import { redirect } from "next/navigation";
+
+export default function Home() {
+  redirect("/dashboard");
 }
